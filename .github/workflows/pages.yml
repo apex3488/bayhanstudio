@@ -32,8 +32,7 @@ jobs:
 
       - name: Build
         env:
-          # Set to /repo-name for project pages, leave empty for username.github.io
-          NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH }}
+          NEXT_PUBLIC_BASE_PATH: /bayhanstudio
         run: npm run build
 
       - name: Upload artifact

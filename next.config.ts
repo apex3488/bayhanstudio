@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+// GitHub Pages project site: apex3488.github.io/bayhanstudio/
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/bayhanstudio";
 
 const nextConfig: NextConfig = {
   output: "export",
