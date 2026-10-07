@@ -1,0 +1,106 @@
+.section {
+  padding-block: 0 var(--space-section);
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  align-items: flex-end;
+}
+
+.title {
+  margin: 0.55rem 0 0;
+  font-size: var(--text-xl);
+}
+
+.grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.item {
+  text-align: left;
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.25rem 1.15rem;
+  border-radius: 16px;
+  border: 1px solid rgba(232, 230, 225, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.item:hover,
+.item:focus-visible {
+  border-color: rgba(61, 139, 253, 0.45);
+  background: rgba(61, 139, 253, 0.08);
+  transform: translateY(-2px);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  color: var(--color-accent);
+}
+
+.item h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+.item p {
+  margin: 0;
+  color: var(--color-mist);
+  font-size: var(--text-sm);
+}
+
+.aboutTeaser,
+.contactStrip {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem 1.3rem;
+  border-radius: 18px;
+  border: 1px solid rgba(232, 230, 225, 0.14);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(61, 139, 253, 0.16), transparent 40%),
+    rgba(255, 255, 255, 0.03);
+}
+
+.aboutTitle,
+.contactTitle {
+  margin: 0.55rem 0 0.7rem;
+  font-size: var(--text-lg);
+  max-width: 16ch;
+}
+
+.aboutText,
+.contactStrip p {
+  margin: 0;
+  color: var(--color-mist);
+  max-width: 46ch;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .aboutTeaser,
+  .contactStrip {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1.8rem;
+  }
+}

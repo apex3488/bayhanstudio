@@ -1,0 +1,211 @@
+.bar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-nav);
+  width: min(calc(100% - 1.25rem), 1080px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.65rem 0.55rem 1rem;
+  border: 1px solid rgba(232, 230, 225, 0.14);
+  border-radius: var(--radius-pill);
+  background: rgba(8, 10, 14, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    background var(--dur-med) var(--ease-out),
+    border-color var(--dur-med) var(--ease-out);
+}
+
+.scrolled {
+  background: rgba(8, 10, 14, 0.88);
+  border-color: rgba(232, 230, 225, 0.22);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  white-space: nowrap;
+}
+
+.mark {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 12px var(--color-accent-soft);
+}
+
+.desktop {
+  display: none;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.navBtn {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-mist);
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.navBtn:hover,
+.navBtn:focus-visible {
+  color: var(--color-paper);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(232, 230, 225, 0.14);
+}
+
+.active {
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border-color: transparent;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  justify-self: end;
+}
+
+.langs {
+  display: none;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(232, 230, 225, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.langs button,
+.overlayLangs button {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  color: var(--color-mist);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.activeLang,
+.langs button[aria-pressed="true"],
+.overlayLangs button[aria-pressed="true"] {
+  color: var(--color-paper);
+  background: rgba(61, 139, 253, 0.2);
+}
+
+.cta {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: linear-gradient(180deg, #f7f5f0, #e8e6e1);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1rem;
+  box-shadow: 0 0 20px rgba(61, 139, 253, 0.18);
+  transition: box-shadow var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  box-shadow: 0 0 28px rgba(61, 139, 253, 0.32);
+}
+
+.menuBtn {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  border: 1px solid rgba(232, 230, 225, 0.22);
+  border-radius: var(--radius-pill);
+  padding: 0.55rem 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  display: grid;
+  align-content: center;
+  gap: 2.5rem;
+  padding: var(--page-x);
+  background:
+    radial-gradient(circle at 70% 20%, rgba(61, 139, 253, 0.16), transparent 40%),
+    rgba(5, 6, 8, 0.97);
+}
+
+.overlay nav {
+  display: grid;
+  gap: 1rem;
+}
+
+.overlay a {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.overlayActions {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.overlayCta {
+  display: inline-flex;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border-radius: var(--radius-pill);
+  padding: 0.9rem 1.4rem;
+}
+
+.overlayLangs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .desktop {
+    display: flex;
+  }
+
+  .langs,
+  .cta {
+    display: inline-flex;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+}

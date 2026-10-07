@@ -1,0 +1,46 @@
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: grid;
+  place-items: center;
+  background: var(--color-void);
+  clip-path: inset(0 0 0 0);
+}
+
+.inner {
+  width: min(90vw, 420px);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.brand {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.status {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
+  color: var(--color-mist);
+}
+
+.bar {
+  height: 1px;
+  background: var(--color-line);
+  overflow: hidden;
+}
+
+.progress {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--color-paper), var(--color-accent));
+}

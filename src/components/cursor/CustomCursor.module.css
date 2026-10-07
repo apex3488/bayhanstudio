@@ -1,0 +1,39 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--color-white);
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    opacity var(--dur-fast) var(--ease-out);
+}
+
+.cursor[data-state="link"] .dot,
+.cursor[data-state="action"] .dot {
+  transform: scale(2.4);
+  background: var(--color-accent);
+}
+
+.cursor[data-state="action"] .dot {
+  transform: scale(3);
+  opacity: 0.85;
+}
+
+@media (max-width: 767px) {
+  .cursor {
+    display: none;
+  }
+}
